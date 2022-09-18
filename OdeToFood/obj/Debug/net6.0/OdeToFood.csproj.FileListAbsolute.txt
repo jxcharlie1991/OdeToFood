@@ -24,3 +24,8 @@ C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\obj\Debug\net6.0\refint\OdeToF
 C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\obj\Debug\net6.0\OdeToFood.pdb
 C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\obj\Debug\net6.0\OdeToFood.genruntimeconfig.cache
 C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\obj\Debug\net6.0\ref\OdeToFood.dll
+C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\bin\Debug\net6.0\OdeToFood.Core.dll
+C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\bin\Debug\net6.0\OdeToFood.Data.dll
+C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\bin\Debug\net6.0\OdeToFood.Data.pdb
+C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\bin\Debug\net6.0\OdeToFood.Core.pdb
+C:\Users\Charlie\source\repos\OdeToFood\OdeToFood\obj\Debug\net6.0\OdeToFood.csproj.CopyComplete
