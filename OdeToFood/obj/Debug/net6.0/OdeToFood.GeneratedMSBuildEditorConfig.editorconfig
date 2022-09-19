@@ -27,8 +27,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Charlie/source/repos/OdeToFood/OdeToFood/Pages/Resturants/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdHVyYW50c1xEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Charlie/source/repos/OdeToFood/OdeToFood/Pages/Resturants/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdHVyYW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Charlie/source/repos/OdeToFood/OdeToFood/Pages/Resturants/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdHVyYW50c1xMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Charlie/source/repos/OdeToFood/OdeToFood/Pages/Resturants/NotFound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVzdHVyYW50c1xOb3RGb3VuZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Charlie/source/repos/OdeToFood/OdeToFood/Pages/Shared/_ValidationScriptsPartial.cshtml]

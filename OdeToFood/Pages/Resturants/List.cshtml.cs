@@ -13,15 +13,18 @@ namespace OdeToFood.Pages.Resturants
         public string Message { get; set; }
         public IEnumerable<Resturant> Resturants{get; set;}
 
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
+
         public ListModel(IConfiguration config, IResturantData resturantData)
         {
             this.config = config;
             this.resturantData = resturantData;
         }
-        public void OnGet(string searchTerm)
-        {
+        public void OnGet()
+        {            
             Message = config["Message"];
-            Resturants = resturantData.GetResturantByName(searchTerm.ToLower());
+            Resturants = resturantData.GetResturantByName(SearchTerm);
         }
     }
 }
