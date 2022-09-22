@@ -8,10 +8,10 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddDbContextPool<OdeToFoodDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration["OdeToFoodDb"]);
+    options.UseSqlServer(builder.Configuration.GetConnectionString("OdeToFoodDb"));
 });
 
-builder.Services.AddSingleton<IResturantData, InMemoryResturantData>();
+builder.Services.AddScoped<IResturantData, SqlResturantData>();
 
 var app = builder.Build();
 
