@@ -32,6 +32,11 @@ namespace OdeToFood.Data
             return db.Resturants.Find(id);
         }
 
+        public int GetCountOfResturants()
+        {
+            return db.Resturants.Count();
+        }
+
         public IEnumerable<Resturant> GetResturantByName(string name)
         {
             var query = from r in db.Resturants
