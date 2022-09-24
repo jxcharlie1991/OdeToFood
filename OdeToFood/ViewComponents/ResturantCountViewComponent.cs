@@ -3,19 +3,19 @@ using OdeToFood.Data;
 
 namespace OdeToFood.ViewComponents
 {
-    public class ResturantCountViewComponent : ViewComponent
+    public class RestaurantCountViewComponent : ViewComponent
     {
-        private readonly IResturantData resturantData;
+        private readonly IRestaurantData restaurantData;
 
-        public ResturantCountViewComponent(IResturantData resturantData)
+        public RestaurantCountViewComponent(IRestaurantData restaurantData)
         {
-            this.resturantData = resturantData;
+            this.restaurantData = restaurantData;
         }
 
         public IViewComponentResult Invoke()
         {
-            var count = resturantData.GetCountOfResturants();
-            return View("ResturantCount", count);
+            var count = restaurantData.GetCountOfRestaurants();
+            return View("RestaurantCount", count);
         }
     }
 }

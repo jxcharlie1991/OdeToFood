@@ -1,15 +1,15 @@
 ﻿@page
-@model OdeToFood.Pages.Resturants.ClientResturantsModel
+@model OdeToFood.Pages.Restaurants.ClientRestaurantsModel
 @{
 }
 
-<h2>Client Resturants</h2>
+<h2>Client Restaurants</h2>
 
 @section Scripts{
     <script>
 
         $(function () {
-            $.ajax("/api/resturants/",
+            $.ajax("/api/restaurants/",
                 { method: "get" }).then(function (response) {
                     console.dir(response);
                 });

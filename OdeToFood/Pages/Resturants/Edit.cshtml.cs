@@ -4,20 +4,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using OdeToFood.Core;
 using OdeToFood.Data;
 
-namespace OdeToFood.Pages.Resturants
+namespace OdeToFood.Pages.Restaurants
 {
     public class EditModel : PageModel
     {
-        private readonly IResturantData resturantData;
+        private readonly IRestaurantData restaurantData;
         private readonly IHtmlHelper htmlHelper;
         public IEnumerable<SelectListItem> Cuisines { get; set; }
         [BindProperty]
-        public Resturant Resturant { get; set; }
+        public Restaurant Restaurant { get; set; }
 
 
-        public EditModel(IResturantData resturantData, IHtmlHelper htmlHelper)
+        public EditModel(IRestaurantData restaurantData, IHtmlHelper htmlHelper)
         {
-            this.resturantData = resturantData;
+            this.restaurantData = restaurantData;
             this.htmlHelper = htmlHelper;
         }
         public IActionResult OnGet(int? id)
@@ -25,13 +25,13 @@ namespace OdeToFood.Pages.Resturants
             Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
             if (id.HasValue)
             {
-                Resturant = resturantData.GetById(id.Value);                
+                Restaurant = restaurantData.GetById(id.Value);                
             }
             else
             {
-                Resturant = new Resturant();
+                Restaurant = new Restaurant();
             }
-            if (Resturant == null)
+            if (Restaurant == null)
             {
                 return RedirectToPage("./NotFound");
             }
@@ -49,18 +49,18 @@ namespace OdeToFood.Pages.Resturants
                 Cuisines = htmlHelper.GetEnumSelectList<CuisineType>();
                 return Page();
             }
-            if (Resturant.Id > 0)
+            if (Restaurant.Id > 0)
             {
-                Resturant = resturantData.Update(Resturant);
+                Restaurant = restaurantData.Update(Restaurant);
  
             }
             else
             {
-                Resturant = resturantData.Add(Resturant);
+                Restaurant = restaurantData.Add(Restaurant);
             }
-            resturantData.SaveChanges();
-            TempData["Message"] = "Resturant Saved!";
-            return RedirectToPage("./Detail", new { id = Resturant.Id });
+            restaurantData.SaveChanges();
+            TempData["Message"] = "Restaurant Saved!";
+            return RedirectToPage("./Detail", new { id = Restaurant.Id });
 
         }
     }

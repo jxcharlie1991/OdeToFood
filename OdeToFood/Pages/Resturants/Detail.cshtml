@@ -1,21 +1,21 @@
 ﻿@page "{id:int}"
-@model OdeToFood.Pages.Resturants.DetailModel
+@model OdeToFood.Pages.Restaurants.DetailModel
 @{
     ViewData["Title"] = "Detail";
 }
 
-<h2>@Model.Resturant.Name</h2>
+<h2>@Model.Restaurant.Name</h2>
 <div>
-    Id: @Model.Resturant.Id
+    Id: @Model.Restaurant.Id
 </div>
 <div>
-    Location: @Model.Resturant.Location
+    Location: @Model.Restaurant.Location
 </div>
 <div>
-    Cuisine: @Model.Resturant.Cuisine
+    Cuisine: @Model.Restaurant.Cuisine
 </div>
 @if(Model.Message!=null){
     <div class="alert alert-info">@Model.Message</div>
 }
 
-<a asp-page="./List" class="btn btn-default">All resturants</a>
+<a asp-page="./List" class="btn btn-default">All restaurants</a>

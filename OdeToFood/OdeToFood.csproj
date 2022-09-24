@@ -18,5 +18,6 @@
   <ItemGroup>
     <ProjectReference Include="..\OdeToFood.Data\OdeToFood.Data.csproj" />
   </ItemGroup>
+  
 
 </Project>

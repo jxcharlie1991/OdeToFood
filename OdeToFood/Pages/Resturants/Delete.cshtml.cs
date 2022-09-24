@@ -3,22 +3,22 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OdeToFood.Core;
 using OdeToFood.Data;
 
-namespace OdeToFood.Pages.Resturants
+namespace OdeToFood.Pages.Restaurants
 {
     public class DeleteModel : PageModel
     {
-        private readonly IResturantData resturantData;
-        public Resturant Resturant { get; set; }
+        private readonly IRestaurantData restaurantData;
+        public Restaurant Restaurant { get; set; }
 
-        public DeleteModel(IResturantData resturantData)
+        public DeleteModel(IRestaurantData restaurantData)
         {
-            this.resturantData = resturantData;
+            this.restaurantData = restaurantData;
         }
 
         public IActionResult OnGet(int id)
         {
-            Resturant = resturantData.GetById(id);
-            if (Resturant == null)
+            Restaurant = restaurantData.GetById(id);
+            if (Restaurant == null)
             {
                 return RedirectToPage("./NotFound");
             }
@@ -27,13 +27,13 @@ namespace OdeToFood.Pages.Resturants
 
         public IActionResult OnPost(int id)
         {
-            var resturant = resturantData.Delete(id);
-            resturantData.SaveChanges();
-            if (Resturant == null)
+            var restaurant = restaurantData.Delete(id);
+            restaurantData.SaveChanges();
+            if (Restaurant == null)
             {
                 return RedirectToPage("./NotFound");
             }
-            TempData["Message"] = $"{resturant.Name} Deleted!";
+            TempData["Message"] = $"{restaurant.Name} Deleted!";
             return RedirectToPage("./List");
         }
     }

@@ -2,48 +2,48 @@
 
 namespace OdeToFood.Data
 {
-    public class InMemoryResturantData : IResturantData
+    public class InMemoryRestaurantData : IRestaurantData
     {
-        List<Resturant> _resturants;
-        public InMemoryResturantData()
+        List<Restaurant> _restaurants;
+        public InMemoryRestaurantData()
         {
-            _resturants = new List<Resturant>()
+            _restaurants = new List<Restaurant>()
             {
-                new Resturant { Id = 0, Name = "Li's Pizza", Location="Rome", Cuisine=CuisineType.Italian},
-                new Resturant { Id = 1, Name = "Shuang's Tacco", Location="Mexico City", Cuisine=CuisineType.Mexican},
-                new Resturant { Id = 2, Name = "Jennifer's Curry", Location="New Delhi", Cuisine=CuisineType.Indian},
+                new Restaurant { Id = 0, Name = "Li's Pizza", Location="Rome", Cuisine=CuisineType.Italian},
+                new Restaurant { Id = 1, Name = "Shuang's Tacco", Location="Mexico City", Cuisine=CuisineType.Mexican},
+                new Restaurant { Id = 2, Name = "Jennifer's Curry", Location="New Delhi", Cuisine=CuisineType.Indian},
             };
         }
-        public IEnumerable<Resturant> GetResturantByName(string name = null)
+        public IEnumerable<Restaurant> GetRestaurantByName(string name = null)
         {
-            return from r in _resturants
+            return from r in _restaurants
                    where string.IsNullOrWhiteSpace(name) ||r.Name.ToLower().StartsWith(name.ToLower())
                    orderby r.Name 
                    select r;
         }
         
-        public Resturant GetById(int id)
+        public Restaurant GetById(int id)
         {
-            return _resturants.SingleOrDefault(r => r.Id == id);
+            return _restaurants.SingleOrDefault(r => r.Id == id);
         }
 
-        public Resturant Add(Resturant newResturant)
+        public Restaurant Add(Restaurant newRestaurant)
         {
-            _resturants.Add(newResturant);
-            newResturant.Id = _resturants.Max(r => r.Id) + 1;
-            return newResturant;
+            _restaurants.Add(newRestaurant);
+            newRestaurant.Id = _restaurants.Max(r => r.Id) + 1;
+            return newRestaurant;
         }
 
-        public Resturant Update(Resturant updatedResturant)
+        public Restaurant Update(Restaurant updatedRestaurant)
         {
-            var resturant = _resturants.SingleOrDefault(r => r.Id == updatedResturant.Id);
-            if(resturant != null)
+            var restaurant = _restaurants.SingleOrDefault(r => r.Id == updatedRestaurant.Id);
+            if(restaurant != null)
             {
-                resturant.Name = updatedResturant.Name;
-                resturant.Location = updatedResturant.Location;
-                resturant.Cuisine = updatedResturant.Cuisine;
+                restaurant.Name = updatedRestaurant.Name;
+                restaurant.Location = updatedRestaurant.Location;
+                restaurant.Cuisine = updatedRestaurant.Cuisine;
             }
-            return resturant;
+            return restaurant;
         }
 
         public int SaveChanges()
@@ -51,19 +51,19 @@ namespace OdeToFood.Data
             return 0;
         }
 
-        public Resturant Delete(int id)
+        public Restaurant Delete(int id)
         {
-            var restaurant = _resturants.SingleOrDefault(r => r.Id == id);
+            var restaurant = _restaurants.SingleOrDefault(r => r.Id == id);
             if(restaurant != null)
             {
-                _resturants.Remove(restaurant);
+                _restaurants.Remove(restaurant);
             }
             return restaurant;
         }
 
-        public int GetCountOfResturants()
+        public int GetCountOfRestaurants()
         {
-            return _resturants.Count();
+            return _restaurants.Count();
         }
     }
 

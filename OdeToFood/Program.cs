@@ -11,7 +11,7 @@ builder.Services.AddDbContextPool<OdeToFoodDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("OdeToFoodDb"));
 });
 
-builder.Services.AddScoped<IResturantData, SqlResturantData>();
+builder.Services.AddScoped<IRestaurantData, SqlRestaurantData>();
 
 var app = builder.Build();
 

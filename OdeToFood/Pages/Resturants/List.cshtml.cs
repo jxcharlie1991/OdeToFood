@@ -3,28 +3,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OdeToFood.Core;
 using OdeToFood.Data;
 
-namespace OdeToFood.Pages.Resturants
+namespace OdeToFood.Pages.Restaurants
 {
     public class ListModel : PageModel
     {
         private readonly IConfiguration config;
-        private readonly IResturantData resturantData;
+        private readonly IRestaurantData restaurantData;
 
         public string Message { get; set; }
-        public IEnumerable<Resturant> Resturants{get; set;}
+        public IEnumerable<Restaurant> Restaurants{get; set;}
 
         [BindProperty(SupportsGet =true)]
         public string SearchTerm { get; set; }
 
-        public ListModel(IConfiguration config, IResturantData resturantData)
+        public ListModel(IConfiguration config, IRestaurantData restaurantData)
         {
             this.config = config;
-            this.resturantData = resturantData;
+            this.restaurantData = restaurantData;
         }
         public void OnGet()
         {            
             Message = config["Message"];
-            Resturants = resturantData.GetResturantByName(SearchTerm);
+            Restaurants = restaurantData.GetRestaurantByName(SearchTerm);
         }
     }
 }

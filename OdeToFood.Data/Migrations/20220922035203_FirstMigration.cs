@@ -9,7 +9,7 @@ namespace OdeToFood.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Resturants",
+                name: "Restaurants",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -20,14 +20,14 @@ namespace OdeToFood.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Resturants", x => x.Id);
+                    table.PrimaryKey("PK_Restaurants", x => x.Id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Resturants");
+                name: "Restaurants");
         }
     }
 }

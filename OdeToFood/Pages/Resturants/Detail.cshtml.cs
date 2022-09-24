@@ -3,24 +3,24 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OdeToFood.Core;
 using OdeToFood.Data;
 
-namespace OdeToFood.Pages.Resturants
+namespace OdeToFood.Pages.Restaurants
 {
     public class DetailModel : PageModel
     {
-        private readonly IResturantData resturantData;
-        public  Resturant Resturant { get; set; }
+        private readonly IRestaurantData restaurantData;
+        public  Restaurant Restaurant { get; set; }
 
         [TempData]
         public string Message { get; set; }
 
-        public DetailModel(IResturantData resturantData)
+        public DetailModel(IRestaurantData restaurantData)
         {
-            this.resturantData = resturantData;
+            this.restaurantData = restaurantData;
         }
         public IActionResult OnGet(int id)
         {
-            Resturant = resturantData.GetById(id);
-            if(Resturant == null)
+            Restaurant = restaurantData.GetById(id);
+            if(Restaurant == null)
             {
                 return RedirectToPage("./NotFound");             
             }

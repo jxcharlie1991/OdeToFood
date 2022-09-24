@@ -23,7 +23,7 @@ namespace OdeToFood.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("OdeToFood.Core.Resturant", b =>
+            modelBuilder.Entity("OdeToFood.Core.Restaurant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -46,7 +46,7 @@ namespace OdeToFood.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Resturants");
+                    b.ToTable("Restaurants");
                 });
 #pragma warning restore 612, 618
         }
