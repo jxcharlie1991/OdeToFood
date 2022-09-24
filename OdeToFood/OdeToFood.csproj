@@ -18,6 +18,10 @@
   <ItemGroup>
     <ProjectReference Include="..\OdeToFood.Data\OdeToFood.Data.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Api\" />
+  </ItemGroup>
   
 
 </Project>
